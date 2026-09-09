@@ -836,7 +836,7 @@ var SZK=/[?&#]k=[0-9]{24}[wb]/.test(location.href);function top(){window.scrollT
 
 <footer>
   <span class="legal" data-i18n="ftr.legal">© 2026 SwitZero</span><span class="legal-addr" data-i18n="ftr.addr">1814 La Tour-de-Peilz · Suisse</span>
-  <span class="site-ver" aria-hidden="true">V3.082</span>
+  <span class="site-ver" aria-hidden="true">V3.083</span>
 </footer></div></div>
 
 <script>
@@ -959,7 +959,7 @@ function cfgRestoreDefault(){
   var sp=document.querySelector('.cfg-specs'); if(sp) sp.classList.remove('custom');
 }
 window.szResetPreset=function(){cfgBgHex='#E3D9C6';cfgLogoHex='#2F302B';cfgApply();cfgRestoreDefault();if(pickSachet)pickSachet.textContent=cqLabel('sa');if(pickLogo)pickLogo.textContent=cqLabel('lo');pulseStick();if(window.szResetBtn)window.szResetBtn();};
-window.szApplyPreset=function(bgHex,logoHex){cfgBgHex=bgHex;cfgLogoHex=logoHex;cfgApply();cfgRestoreDefault();if(pickSachet)pickSachet.textContent=cqLabel('sa');if(pickLogo)pickLogo.textContent=cqLabel('lo');pulseStick();if(window.szArmDownload){var br=document.documentElement.classList.contains('sz-brown');var pay=['saC','saM','saY','saK','loC','loM','loY','loK'].map(function(q){return ('00'+cqVal(q)).slice(-3);}).join('')+(br?'b':'w')+(document.documentElement.classList.contains('sz-pp')?'p':'');window.szArmDownload({bg:cfgBgHex,logo:cfgLogoHex,seal:br?'#B4844B':'#FBFAF6',sealh:br?'#9C6E39':'#E7E2D6',engrave:cfgLogoHex,deposit:br?'#E3C489':'#EEF1F0',custom:false,pp:document.documentElement.classList.contains('sz-pp'),pay:pay,file:'SwitZero_sachet-'+cqCode('sa')+'_logo-'+cqCode('lo')+'_'+(document.documentElement.lang||'fr').slice(0,2).toUpperCase()+'.png',bgq:cqLabel('sa'),logoq:cqLabel('lo'),sealq:br?'Sucre brun':'Sucre blanc'});}};
+window.szApplyPreset=function(bgHex,logoHex){cfgBgHex=bgHex;cfgLogoHex=logoHex;cfgApply();cfgCustomize();if(pickSachet)pickSachet.textContent=cqLabel('sa');if(pickLogo)pickLogo.textContent=cqLabel('lo');pulseStick();if(window.szArmDownload){var br=document.documentElement.classList.contains('sz-brown');var pay=['saC','saM','saY','saK','loC','loM','loY','loK'].map(function(q){return ('00'+cqVal(q)).slice(-3);}).join('')+(br?'b':'w')+(document.documentElement.classList.contains('sz-pp')?'p':'');window.szArmDownload({bg:cfgBgHex,logo:cfgLogoHex,seal:br?'#B4844B':'#FBFAF6',sealh:br?'#9C6E39':'#E7E2D6',engrave:cfgLogoHex,deposit:br?'#E3C489':'#EEF1F0',custom:true,pp:document.documentElement.classList.contains('sz-pp'),pay:pay,file:'SwitZero_sachet-'+cqCode('sa')+'_logo-'+cqCode('lo')+'_'+(document.documentElement.lang||'fr').slice(0,2).toUpperCase()+'.png',bgq:cqLabel('sa'),logoq:cqLabel('lo'),sealq:br?'Sucre brun':'Sucre blanc'});}};
 var genBtn=document.getElementById('genBtn');
 if(genBtn){
   genBtn.addEventListener('animationend',function(){genBtn.classList.remove('wrong');});
